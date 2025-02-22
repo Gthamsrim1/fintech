@@ -39,7 +39,7 @@ const Amazmom = ({ lives, setLives }) => {
   const navigate = useNavigate();
 
   const createPopups = () =>
-    Array.from({ length: 15 }, () => ({
+    Array.from({ length: 8 }, () => ({
       id: Math.random(),
       top: `${Math.random() * 70 + 10}%`,
       left: `${Math.random() * 85 + 5}%`
@@ -56,7 +56,7 @@ const Amazmom = ({ lives, setLives }) => {
   }, [popups]);
 
   return (
-    <div className="min-h-screen bg-gray-100 py-10 relative">
+    <div className="min-h-screen bg-gray-100 py-10 relative font-poppins">
       <h1 className="text-4xl font-bold text-center text-pink-600 mb-8">Pragyan Merch</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto px-4">
         {products.map((product) => (
@@ -104,17 +104,15 @@ const Amazmom = ({ lives, setLives }) => {
             onClick={() => setPopups((prev) => prev.filter((p) => p.id !== popup.id))}
           >
             ✕
-          </button>
-          
+          </button>          
+        </div>
+      ))}
           {showAiBox && (
                 <div className="absolute right-10 top-20 bg-gray-800 p-5 rounded-xl shadow-lg w-80 min-h-[100px] flex flex-col items-center justify-center">
-                    <h3 className="text-xl font-bold text-blue-400">AI Advice</h3>
+                    <h3 className="text-xl font-bold text-red-400">AI Warning</h3>
                     <p className="text-white mt-2 text-center">{isFetching ? "Waiting for AI response..." : aiMessage}</p>
                 </div>
             )}
-          
-        </div>
-      ))}
     </div>
   );
 };

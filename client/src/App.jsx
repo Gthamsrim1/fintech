@@ -23,7 +23,7 @@ const DynamicPlaceholder = () => {
     '/': 'https://Gmail.com/Login',
     '/Amazmom': 'http://AmazmomDeals.com',
     '/Email': 'https://Gmale.com/YourInbox',
-    '/login': 'https://Pragyan.com/SecureLogin',
+    '/login': 'https://Pragyan.org/SecureLogin',
     '/FakeLogin': 'http://Prágyan.com/AccountVerification',
     '/Romance': 'http://RomanticChat.com/MILF'
   };
@@ -74,7 +74,7 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
-        <div className='bg-pink-300 h-screen w-screen'>
+        <div className='bg-pink-300 h-screen w-screen font-poppins'>
 
           <div className='flex gap-1 items-center px-1 absolute z-[1] w-full'>
             <div className='w-[32px] bg-pink-200 h-[30px] rounded-[30%] hover:bg-pink-100'></div>

@@ -36,6 +36,7 @@ const defaultEmailCategories = {
     { id: 10, sender: "Apple", subject: "Special Event Invite", content: "Join us for our latest product announcements.", starred: false, read: false },
   ],
   social: [
+    { id: 14, sender: "Alex", subject: "Beware!", content: "There is a fake pragyan website. beware!", starred: false, read: false },
     { id: 5, sender: "Facebook", subject: "New Friend Request", content: "You have a new friend request from Alex.", starred: false, read: false },
     { id: 6, sender: "Twitter", subject: "Trending Topics", content: "Check out the latest trends on Twitter.", starred: false, read: false },
   ]
@@ -125,7 +126,7 @@ function Email() {
   };
 
   return (
-    <div className="flex h-screen bg-[url(./src/assets/shit.jpg)]">
+    <div className="flex h-screen bg-[url(./src/assets/shit.jpg)] font-poppins">
       <div className="mt-2 w-64 shadow-lg p-4 flex flex-col">
         <Button className="w-40 mx-auto mb-4 bg-white/30">Compose</Button>
         <ul className="space-y-2 text-white font-medium">
@@ -150,7 +151,7 @@ function Email() {
               onClick={() => handleEmailClick(email)}
             >
               <p className="font-semibold text-black truncate">{email.sender}</p>
-              <p className="text-black font-semibold">{email.subject}</p>
+              <p className="text-white font-semibold">{email.subject}</p>
             </div>
           ))}
         </div>
@@ -158,10 +159,10 @@ function Email() {
       <div className="mt-2 w-1/3 p-6 ml-1 bg-white/30 backdrop-blur-xl shadow-lg border border-gray-300 rounded-lg">
         {selectedEmail ? (
           <div>
-            <h2 className="text-2xl font-bold text-gray-900">{selectedEmail.subject}</h2>
+            <h2 className="text-2xl font-bold text-black">{selectedEmail.subject}</h2>
             <p className="text-black mt-2">From: <span className="font-semibold">{selectedEmail.email}</span></p>
             <hr className="my-4" />
-            <p className="text-black" dangerouslySetInnerHTML={{ __html: selectedEmail.content }} />
+            <p className="text-white" dangerouslySetInnerHTML={{ __html: selectedEmail.content }} />
           </div>
         ) : (
           <p className="text-black text-center mt-10">Select an email to view details</p>
